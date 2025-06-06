@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
+      // debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
         // This is the theme of your application.
@@ -88,35 +88,27 @@ class _MyHomePageState extends State<MyHomePage> {
         // Here we take the value from the MyHomePage object that was created by
         // the App.build method, and use it to set our appbar title.
         title: Text(widget.title),
+        // leading: Icon(Icons.notification_add, color: Colors.amber),
       ),
-      body: Center(
-        // Center is a layout widget. It takes a single child and positions it
-        // in the middle of the parent.
-        child: Container(
-          color: Colors.black38,
-          child: Row(
-            // mainAxisAlignment: MainAxisAlignment.end,
-            children: [
-              Container(
-                height: 100.0,
-                width: 100.0,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(25.0),
-                  color: Colors.red,
-                ),
-              ),
-              Container(
-                height: 100.0,
-                width: 100.0,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(25.0),
-                  color: Colors.red,
-                ),
-              ),
-            ],
-          ),
+      body: Container(
+        // padding: EdgeInsets.all(50),
+        child: Stack(
+          children: [
+            // Image.asset('assets/images/bg.jpg', height: 300, fit: BoxFit.cover),
+            SizedBox(height: 300, child: Center(child: Text('Flutter'))),
+            ListTile(
+              leading: Icon(Icons.join_full),
+              tileColor: Colors.red,
+              title: Text('TJEAFVVBB AFEFEW'),
+              trailing: Text('TRA'),
+              onTap: () {
+                print('clicked on wejofjwe');
+              },
+            ),
+          ],
         ),
       ),
+
       floatingActionButton: FloatingActionButton(
         onPressed: _incrementCounter,
         tooltip: 'Increment',
