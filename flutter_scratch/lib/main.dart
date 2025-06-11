@@ -1,6 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:logging/logging.dart';
 
 void main() {
+  // Set up logging
+  Logger.root.level = Level.ALL;
+  Logger.root.onRecord.listen((record) {
+    // You can customize this to log to a file or remote server
+    debugPrint('${record.level.name}: ${record.time}: ${record.message}');
+  });
+
   runApp(const MyApp());
 }
 
@@ -53,14 +61,14 @@ class _MyHomePageState extends State<MyHomePage> {
         children: [
           FloatingActionButton(
             onPressed: () {
-              print("aaaaa");
+              Logger('FloatingActionButton').info("aaaaa");
             },
             child: Icon(Icons.add),
           ),
           SizedBox(height: 10.0),
           FloatingActionButton(
             onPressed: () {
-              print("aaaaa");
+              Logger('FloatingActionButton').info("aaaaa");
             },
             child: Icon(Icons.add),
           ),
